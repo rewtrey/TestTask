@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
+//Route::get('/{blogs}', 'App\Http\Controllers\BlogController@show')->name('blogs.show');
 
 
  Route::middleware(['is_admin'])->group(function () {
@@ -23,6 +24,9 @@ use Illuminate\Support\Facades\Route;
  Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class)->middleware('is_admin');
     //Route::group(['prefix' => 'admin', 'namespase' => 'Admin'], function (){
         //Route::resource('/categori', \App\Http\Controllers\Admin\CategoryController::class, ['as' => 'admin.categori']);
+
+
+
 
  Route::group(['prefix' => 'user_managment', 'namespase' => 'UserManagment'], function (){
  Route::resource('/user', \App\Http\Controllers\Admin\UserManagment\UserController::class, ['as' => 'admin.user.managment']);

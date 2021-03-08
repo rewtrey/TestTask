@@ -34,13 +34,13 @@
                                 <td>{{ $blog['created_at']}}</td>
                                 <td>
                                     @if ($userEmail)
-                                        <form action="{{ route('blogs.destroy',$blog['id']) }}" method="POST">
-                                            <a class="btn btn-success" href="{{ route('blogs.show',$blog['id']) }}">
+                                        <form action="{{ route('blogs.destroy',$blog['slug']) }}" method="POST">
+                                            <a class="btn btn-success" href="{{ route('blogs.show',$blog['slug']) }}">
                                                 <i class="fa fa-eye"></i>
                                             </a>
 
                                     @if ($blog->user_id == Auth::user()->id)
-                                            <a class="btn btn-primary" href="{{ route('blogs.edit',$blog['id']) }}">
+                                            <a class="btn btn-primary" href="{{ route('blogs.edit',$blog['slug']) }}">
                                                 <i class="fa fa-pencil" ></i>
                                             </a>
 

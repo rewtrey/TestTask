@@ -36,4 +36,9 @@ class Blog extends Model
         return $this->morphToMany(Category::class);
     }
 
+    public function getRouteKeyName()
+    {
+        return 'slug'; // db column name
+    }
+
 }

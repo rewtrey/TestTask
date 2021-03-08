@@ -37,6 +37,12 @@ class BlogController extends Controller
         return view('blogs/create');
     }
 
+    public function show(Blog $blog)
+    {
+        return view('blogs.show', compact('blog'));
+    }
+
+    /*
     public function show($blogId)
     {
         $blog = Blog::query()
@@ -45,6 +51,7 @@ class BlogController extends Controller
 
         return view('blogs.show',compact('blog'));
     }
+    */
 
     public function edit(Blog $blogs)
     {
